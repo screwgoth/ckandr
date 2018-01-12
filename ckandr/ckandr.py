@@ -13,5 +13,5 @@ class Ckandr(object):
         koinex.get_koinex_rates()
         zebpay = Zebpay()
         zebpay.get_zebpay_rates()
-        unocoin = Unocoin()
-        unocoin.get_unocoin_rates()
+        #unocoin = Unocoin()
+        #unocoin.get_unocoin_rates()
