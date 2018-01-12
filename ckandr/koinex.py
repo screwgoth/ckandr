@@ -18,8 +18,6 @@ class Koinex(object):
 
 
     def get_koinex_rates(self):
-        print ("Getting data from Koinex")
-        print (self.URL)
         os.system('clear')
         try:
             response = requests.get(self.URL)
