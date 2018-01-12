@@ -1,6 +1,6 @@
-from ckandr.koinex import Koinex
-from ckandr.zebpay import Zebpay
-from ckandr.unocoin import Unocoin
+from .koinex import Koinex
+from .zebpay import Zebpay
+from .unocoin import Unocoin
 
 class Ckandr(object):
     """Main Ckandr class"""

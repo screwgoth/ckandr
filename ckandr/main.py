@@ -1,4 +1,4 @@
-from ckandr import ckandr
+from . import ckandr
 import sys
 
 def main():
