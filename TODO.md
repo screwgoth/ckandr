@@ -1,4 +1,4 @@
-**ckanr's** TODO list for **WORLD DOMINATION** _(One Cryptocurrency's Indian price at a time)_
+**ckandr's** TODO list for **WORLD DOMINATION** _(One Cryptocurrency's Indian price at a time)_
 ******************************************
 * Add support for Unocoin
 * Poke Coinome and others to provide API
