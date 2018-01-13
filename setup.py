@@ -12,6 +12,38 @@ def requirements():
 
     return requirements_list
 
+long_description = """
+About
+-----
+ckandr is a python-based command-line application Cryptocurrency prices from popular Indian cryptocurrency exchanges.
+There are already some great command-line cryptocurrency price ticker tools like `Coinmon`_ and it's python port `Pycoinmon`_.
+ckandr is heavily inspired by both these projects.
+However, both these projects get their data from `CoinMarketCap`_'s API. This is of no use to Indian investors who are investing through Indian exchanges like `Koinex`_, `ZebPay`_ and others.
+ckandr aims to solve this problem by fetching prices from these sites (and more to follow soon).
+
+For all you non-Hindi speaking people out there, ckandr is a play on a Hindi word, Sikander, which means a "warrior" or "defender". And the pseudo-acronym of ckandr, Crypto KA Naya Desi Rate, just means the latest price of cryptocurrencies in Rupees(INR).
+
+Usage
+-----
+It's as easy as:
+
+::
+
+    $ ckandr
+
+Screenshot
+----------
+
+.. figure:: https://raw.githubusercontent.com/screwgoth/ckandr/master/ckandr_screenshot.png
+   :alt: ckandr screenshot
+
+.. _Coinmon : https://github.com/bichenkk/coinmon
+.. _Pycoinmon : https://github.com/RDCH106/pycoinmon
+.. _Koinex : http://koinex.in
+.. _ZebPay : http://zebpay.com
+.. _CoinMarketCap: https://coinmarketcap.com/
+
+    """
 
 setup(
     name = 'ckandr',
@@ -20,7 +52,7 @@ setup(
     version = '0.1',
     license = 'MIT',
     description = 'Cryptocurrency Ka Naya Desi Rate : Cryptocurrency prices from Indian exchanges',
-    long_description= 'Cryptocurrency Ka Naya Desi Rate : Cryptocurrency prices from Indian exchanges',
+    long_description= long_description,
     author = 'Raseel Bhagat',
     author_email = 'raseelbhagat@gmail.com',
     url = 'https://github.com/screwgoth/ckandr',
