@@ -9,6 +9,18 @@ _For all you non-Hindi speaking people out there, ckandr is a play on a Hindi wo
 
 
 ## Installation
+It can be done in a couple of ways
+
+### The easy way
+```
+$ pip install ckandr
+```
+And if you want to upgrade
+```
+$ pip install ckandr --upgrade
+```
+
+### Installing from source
 Clone the Repo
 ```
 git clone git@github.com:screwgoth/ckandr.git
