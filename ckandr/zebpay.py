@@ -7,7 +7,7 @@ class Zebpay(object):
 
     def __init__(self):
         self.URL = "https://www.zebapi.com/api/v1/market/ticker/btc/inr"
-        self.title = "Zebpay CryptoCurrency Rates"
+        self.title = "\033[94mZebpay CryptoCurrency Rates\033[0m"
         self.cryptos = {
             "BTC": "BitCoin"
         }

@@ -7,7 +7,7 @@ class Koinex(object):
 
     def __init__(self):
         self.URL = "https://koinex.in/api/ticker"
-        self.title = "Koinex CryptoCurrency Rates"
+        self.title = "\033[94mKoinex CryptoCurrency Rates\033[0m"
         self.cryptos = {
             "BTC": "BitCoin",
             "ETH": "Ethereum",
