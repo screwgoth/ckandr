@@ -1,9 +1,9 @@
 # ckandr (Crypto KA Naya Desi Rate)
 ************************************
-**ckandr_** is a python-based command-line application Cryptocurrency prices from popular Indian cryptocurrency exchanges.
-There are already some great command-line cryptocurrency price ticker tools like [Coinmon](https://github.com/bichenkk/coinmon) and it's python port [Pycoinmon](https://github.com/RDCH106/pycoinmon). **ckandr_** is heavily inspired by both these projects.
+**ckandr** is a python-based command-line application Cryptocurrency prices from popular Indian cryptocurrency exchanges.
+There are already some great command-line cryptocurrency price ticker tools like [Coinmon](https://github.com/bichenkk/coinmon) and it's python port [Pycoinmon](https://github.com/RDCH106/pycoinmon). **ckandr** is heavily inspired by both these projects.
 However, both these projects get their data from [CoinMarketCap](http://coinmarketcap.com)'s API. This is of no use to Indian investors who are investing through Indian exchanges like [Koinex](http://koinex.in), [ZebPay](http://zebpay.com) and others.
-**ckandr_** aims to solve this problem by fetching prices from these sites. (and more to follow soon)
+**ckandr** aims to solve this problem by fetching prices from these sites. (and more to follow soon)
 
 _For all you non-Hindi speaking people out there, ckandr is a play on a Hindi word, Sikander, which means a "warrior" or "defender". And the pseudo-acronym of ckandr, Crypto KA Naya Desi Rate, just means the latest price of cryptocurrencies in Rupees._
 
@@ -45,7 +45,7 @@ ckandr
 ![ckandr_screenshot](https://raw.githubusercontent.com/screwgoth/ckandr/master/ckandr_screenshot.png)
 
 ## TODO
-Please refer to the `TODO` file for the list of things to do for world domination
+Please refer to the `TODO.md` file for the list of things to do for _world domination_
 
 ## Licensing
 The code in this project is licensed under the MIT License.
