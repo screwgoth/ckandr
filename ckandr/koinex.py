@@ -8,7 +8,7 @@ class Koinex(object):
     def __init__(self):
         self.URL = "https://koinex.in/api/ticker"
         self.title = "\033[94mKoinex CryptoCurrency Rates\033[0m"
-        self.cryptos = {
+        self.supported_cryptos = {
             "BTC": "BitCoin",
             "ETH": "Ethereum",
             "XRP": "Ripple",
@@ -17,8 +17,11 @@ class Koinex(object):
         }
 
 
-    def get_koinex_rates(self):
+    def get_koinex_rates(self, crypto_curr='ALL'):
         os.system('clear')
+        if crypto_curr is None:
+            crypto_curr = "ALL"
+
         try:
             response = requests.get(self.URL)
         except Exception as e:
@@ -27,8 +30,9 @@ class Koinex(object):
             koinex_data = response.json()
             koinex_list = []
             koinex_list.append(['CryptoCurrency Name', 'Symbol', 'Price'] )
-            for curr in self.cryptos:
-                koinex_list.append([self.cryptos[curr], curr, koinex_data['prices'][curr]])
+            for curr in self.supported_cryptos:
+                if (self.supported_cryptos[curr].upper() == crypto_curr.upper() or crypto_curr == "ALL"):
+                    koinex_list.append([self.supported_cryptos[curr], curr, koinex_data['prices'][curr]])
             table = DoubleTable(koinex_list)
             table.title = self.title
             table.inner_row_border = True
