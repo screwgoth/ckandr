@@ -9,7 +9,7 @@ class Ckandr(object):
     """Main Ckandr class"""
 
     def __init__(self):
-        self.supported_exchanges = ["KOINEX", "ZEBPAY"]
+        self.supported_exchanges = ["KOINEX", "ZEBPAY", "UNOCOIN"]
         parser = argparse.ArgumentParser(description="Command-line application to fetch latest cryptocurrency prices from Indian exchanges")
         parser.add_argument('-v', '--version', action='version', version="0.1.1")
         parser.add_argument('-e', '--exchange', dest='exchange', help='Name of the Exchange whose rates you want to checkout. Eg., Koinex, Zebpay, etc.')
@@ -31,6 +31,9 @@ class Ckandr(object):
         if ("ZEBPAY" in exchange.upper() or "ALL" in exchange.upper()):
             zebpay = Zebpay()
             zebpay.get_zebpay_rates(self.args.crypto)
+        if ("UNOCOIN" in exchange.upper() or "ALL" in exchange.upper()):
+            unocoin = Unocoin()
+            unocoin.get_unocoin_rates(self.args.crypto)
         #unocoin = Unocoin()
         #unocoin.get_unocoin_rates()
 
