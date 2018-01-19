@@ -48,9 +48,9 @@ pip install . --upgrade
 ```
 
 ## Usage
-It's as simple as:
+Checkout help:
 ```
-ckandr
+ckandr --help
 ```
 
 ## Screenshot
