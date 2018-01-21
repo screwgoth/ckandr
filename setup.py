@@ -49,7 +49,7 @@ setup(
     name = 'ckandr',
     packages = ['ckandr'],
     install_requires = ['certifi==2017.11.5', 'chardet==3.0.4', 'idna==2.6', 'requests==2.18.4', 'terminaltables==3.1.0', 'urllib3==1.22'],
-    version = '0.2',
+    version = '0.3',
     license = 'MIT',
     description = 'Cryptocurrency Ka Naya Desi Rate : Cryptocurrency prices from Indian exchanges',
     long_description= long_description,
@@ -60,13 +60,16 @@ setup(
     entry_points={
         'console_scripts': ['ckandr=ckandr.main:main'],
     },
-    #scripts=['ckandr/main.py'],
     keywords = 'bitcoin cryptocurrency ticker python cli price-tracker command-line',
-    classifiers = ['Programming Language :: Python',
-                   'Programming Language :: Python :: 2.7',
-                   'Programming Language :: Python :: 3.2',
-                   'Programming Language :: Python :: 3.3',
-                   'Programming Language :: Python :: 3.4',
-                   'Programming Language :: Python :: 3.5',
-                   'Programming Language :: Python :: 3.6'],
+    classifiers = [
+      'Development Status :: 4 - Beta',
+      'Environment :: Console',
+      'Intended Audience :: End Users/Desktop',
+      'License :: OSI Approved :: MIT License',
+      'Operating System :: MacOS',
+      'Operating System :: POSIX',
+      'Programming Language :: Python',
+      'Programming Language :: Python :: 3.6',
+      'Topic :: Utilities'
+      ],
 )

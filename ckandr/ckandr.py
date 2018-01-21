@@ -11,9 +11,9 @@ class Ckandr(object):
     """Main Ckandr class"""
 
     def __init__(self):
-        self.supported_exchanges = ["KOINEX", "ZEBPAY", "UNOCOIN", "CONDELTA", "COINSECURE"]
+        self.supported_exchanges = ["koinex", "zebpay", "unocoin", "coindelta", "coinsecure"]
         parser = argparse.ArgumentParser(description="Command-line application to fetch latest cryptocurrency prices from Indian exchanges")
-        parser.add_argument('-v', '--version', action='version', version="0.2")
+        parser.add_argument('-v', '--version', action='version', version="0.3")
         parser.add_argument('-e', '--exchange', dest='exchange', help='Name of the Exchange whose rates you want to checkout. Eg., Koinex, Zebpay, etc.')
         parser.add_argument('-c', '--cryptocurrency', dest='crypto', help='Name of the Cryptocurrency')
         parser.add_argument('-l', '--list', help='List supported Cryptocurrency Exchanges', dest='list', action='store_true')
