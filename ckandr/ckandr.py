@@ -3,13 +3,15 @@ import sys
 from .koinex import Koinex
 from .zebpay import Zebpay
 from .unocoin import Unocoin
+from .coindelta import Coindelta
+from .coinsecure import Coinsecure
 from terminaltables import DoubleTable
 
 class Ckandr(object):
     """Main Ckandr class"""
 
     def __init__(self):
-        self.supported_exchanges = ["KOINEX", "ZEBPAY", "UNOCOIN"]
+        self.supported_exchanges = ["KOINEX", "ZEBPAY", "UNOCOIN", "CONDELTA", "COINSECURE"]
         parser = argparse.ArgumentParser(description="Command-line application to fetch latest cryptocurrency prices from Indian exchanges")
         parser.add_argument('-v', '--version', action='version', version="0.2")
         parser.add_argument('-e', '--exchange', dest='exchange', help='Name of the Exchange whose rates you want to checkout. Eg., Koinex, Zebpay, etc.')
@@ -31,11 +33,15 @@ class Ckandr(object):
         if ("ZEBPAY" in exchange.upper() or "ALL" in exchange.upper()):
             zebpay = Zebpay()
             zebpay.get_zebpay_rates(self.args.crypto)
+        if ("COINDELTA" in exchange.upper() or "ALL" in exchange.upper()):
+            coindelta = Coindelta()
+            coindelta.get_coindelta_rates(self.args.crypto)
+        if ("COINSECURE" in exchange.upper() or "ALL" in exchange.upper()):
+            coinsecure = Coinsecure()
+            coinsecure.get_coinsecure_rates(self.args.crypto)
         if ("UNOCOIN" in exchange.upper() or "ALL" in exchange.upper()):
             unocoin = Unocoin()
             unocoin.get_unocoin_rates(self.args.crypto)
-        #unocoin = Unocoin()
-        #unocoin.get_unocoin_rates()
 
     def list_exchanges(self):
         """List supported Cryptocurrency Exchanges"""
