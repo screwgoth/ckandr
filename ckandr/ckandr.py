@@ -1,3 +1,4 @@
+import os
 import argparse
 import sys
 from .koinex import Koinex
@@ -5,7 +6,9 @@ from .zebpay import Zebpay
 from .unocoin import Unocoin
 from .coindelta import Coindelta
 from .coinsecure import Coinsecure
+from . import utils
 from terminaltables import DoubleTable
+
 
 class Ckandr(object):
     """Main Ckandr class"""
@@ -27,9 +30,10 @@ class Ckandr(object):
             exchange = self.args.exchange
         else:
             exchange = "ALL"
+        os.system('clear')
         if ("KOINEX" in exchange.upper() or "ALL" in exchange.upper()):
             koinex = Koinex()
-            koinex.get_koinex_rates(self.args.crypto)
+            koinex.get_koinex_table(self.args.crypto)
         if ("ZEBPAY" in exchange.upper() or "ALL" in exchange.upper()):
             zebpay = Zebpay()
             zebpay.get_zebpay_rates(self.args.crypto)
@@ -51,8 +55,7 @@ class Ckandr(object):
             tmp_list = []
             tmp_list.append(ex)
             exchanges_list.append(tmp_list)
-        table = DoubleTable(exchanges_list)
-        table.title = "\033[94mExchanges\033[0m"
-        table.inner_row_border = True
-        print (table.table)
+        title = "\033[94mExchanges\033[0m"
+        utils.draw_table(title, exchanges_list)
+
         sys.exit(0)
