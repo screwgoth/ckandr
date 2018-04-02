@@ -1,5 +1,6 @@
+import os
 import requests
-from . import utils
+from terminaltables import DoubleTable
 
 class Unocoin(object):
     """Main Unocoin Class"""
@@ -16,7 +17,8 @@ class Unocoin(object):
             "BTC": "BitCoin"
         }
 
-    def get_unocoin_table(self, crypto_curr='ALL'):
+
+    def get_unocoin_rates(self, crypto_curr='ALL'):
         print("\033[37mWait for it ...\033[0m")
         access_token = self.get_unocoin_access_token()
         if crypto_curr is None:
@@ -39,15 +41,16 @@ class Unocoin(object):
                 if (self.supported_cryptos[curr].upper() == crypto_curr.upper() or crypto_curr == "ALL"):
                     #unocoin_list.append([self.supported_cryptos[curr], curr, unocoin_data['buy'], unocoin_data['sell'] ])
                     unocoin_list.append([self.supported_cryptos[curr], curr, unocoin_data['buybtc'], unocoin_data['sellbtc'] ])
-            utils.draw_table(self.title, unocoin_list)
+            table = DoubleTable(unocoin_list)
+            table.title = self.title
+            table.inner_row_border = True
+            print (table.table)
 
     def get_unocoin_access_token(self):
-        """
-        Get Unocoin Access token
-        """
+        """Get Unocoin Access token"""
         payload = {
-            "grant_type": "client_credentials",
-            "access_lifetime": "30"
+            "grant_type":"client_credentials",
+            "access_lifetime":"30"
         }
         resp = requests.post(self.auth_URL, data=payload, auth=(self.client_id, self.client_secret))
         respj = resp.json()
