@@ -16,7 +16,24 @@ class Coindelta(object):
             "OMG": "OmiseGO",
             "QTUM": "Qtum",
             "XRP": "Ripple",
-            "BCH": "Bitcoin Cash"
+            "BCH": "Bitcoin Cash",
+            "ZIL": "Zilliqa",
+            "ZRX": "0x",
+            "KNC": "KingN Coin",
+            "EOS": "EOS",
+            "ZEC": "ZCash",
+            "NEO": "NEO",
+            "GAS": "Gas",
+            "TRX": "TRON",
+            "GNT": "Golem",
+            "BAT": "Basic Attention Token",
+            "CVC": "Civic",
+            "ENG": "Enigma",
+            "MANA": "Decentraland",
+            "SPANK": "SpankChain",
+            "ICX": "ICON",
+            "CND": "Cindicator",
+            "AION": "Aion"
         }
 
     def get_coindelta_table(self, crypto_curr="ALL"):

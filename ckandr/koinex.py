@@ -14,7 +14,21 @@ class Koinex(object):
             "ETH": "Ethereum",
             "XRP": "Ripple",
             "BCH": "Bitcoin Cash",
-            "LTC": "LiteCoin"
+            "LTC": "LiteCoin",
+            "EOS": "EOS",
+            "NEO": "NEO",
+            "MIOTA": "IOTA",
+            "TRX": "TRON",
+            "OMG": "OmiseGO",
+            "AE": "Aeternity",
+            "ZRX": "0x",
+            "GNT": "Golem",
+            "BAT": "Basic Authentication Token",
+            "GAS": "GAS",
+            "REQ": "Request",
+            "AION": "Aion",
+            "NCASH": "Nucleus Vision",
+            "XLM": "Stellar"
         }
 
     def get_koinex_table(self, crypto_curr='ALL'):
