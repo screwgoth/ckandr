@@ -49,7 +49,7 @@ setup(
     name = 'ckandr',
     packages = ['ckandr'],
     install_requires = ['certifi==2017.11.5', 'chardet==3.0.4', 'idna==2.6', 'requests==2.18.4', 'terminaltables==3.1.0', 'urllib3==1.22'],
-    version = '0.3',
+    version = '0.3.3',
     license = 'MIT',
     description = 'Cryptocurrency Ka Naya Desi Rate : Cryptocurrency prices from Indian exchanges',
     long_description= long_description,

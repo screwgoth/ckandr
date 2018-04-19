@@ -1,8 +1,10 @@
-import requests
-from terminaltables import DoubleTable
+from . import utils
+
 
 class Coindelta(object):
-    """Main Coindelta class"""
+    """
+    Main Coindelta class
+    """
 
     def __init__(self):
         self.URL = "https://coindelta.com/api/v1/public/getticker/"
@@ -14,30 +16,38 @@ class Coindelta(object):
             "OMG": "OmiseGO",
             "QTUM": "Qtum",
             "XRP": "Ripple",
-            "BCH": "Bitcoin Cash"
+            "BCH": "Bitcoin Cash",
+            "ZIL": "Zilliqa",
+            "ZRX": "0x",
+            "KNC": "KingN Coin",
+            "EOS": "EOS",
+            "ZEC": "ZCash",
+            "NEO": "NEO",
+            "GAS": "Gas",
+            "TRX": "TRON",
+            "GNT": "Golem",
+            "BAT": "Basic Attention Token",
+            "CVC": "Civic",
+            "ENG": "Enigma",
+            "MANA": "Decentraland",
+            "SPANK": "SpankChain",
+            "ICX": "ICON",
+            "CND": "Cindicator",
+            "AION": "Aion"
         }
 
-    def get_coindelta_rates(self, crypto_curr="ALL"):
-        print ("")
+    def get_coindelta_table(self, crypto_curr="ALL"):
         if crypto_curr is None:
             crypto_curr = "ALL"
 
-        try:
-            response = requests.get(self.URL)
-        except Exception as e:
-            print(type(e).__name__)
-        if response and response.status_code == 200:
-            coindelta_data = response.json()
-            coindelta_list = []
-            coindelta_list.append(['CryptoCurrency Name', 'Symbol', 'Buy Rate', 'Sell Rate'] )
-            for curr in self.supported_cryptos:
-                if (self.supported_cryptos[curr].upper() == crypto_curr.upper() or crypto_curr == "ALL"):
-                    buyrate, sellrate = self.rates_from_response(curr, coindelta_data)
-                    coindelta_list.append([self.supported_cryptos[curr], curr, buyrate, sellrate])
-            table = DoubleTable(coindelta_list)
-            table.title = self.title
-            table.inner_row_border = True
-            print (table.table)
+        coindelta_data = utils.call_exchange_api(self.URL)
+        coindelta_list = []
+        coindelta_list.append(['CryptoCurrency Name', 'Symbol', 'Buy Rate', 'Sell Rate'] )
+        for curr in self.supported_cryptos:
+            if (self.supported_cryptos[curr].upper() == crypto_curr.upper() or crypto_curr == "ALL"):
+                buyrate, sellrate = self.rates_from_response(curr, coindelta_data)
+                coindelta_list.append([self.supported_cryptos[curr], curr, buyrate, sellrate])
+        utils.draw_table(self.title, coindelta_list)
 
     def rates_from_response(self, curr, coindelta_data):
         for cd_curr in coindelta_data:
