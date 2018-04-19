@@ -6,13 +6,14 @@ from .zebpay import Zebpay
 from .unocoin import Unocoin
 from .coindelta import Coindelta
 from .coinsecure import Coinsecure
+from .wazirx import Wazirx
 from . import utils
 
 class Ckandr(object):
     """Main Ckandr class"""
 
     def __init__(self):
-        self.supported_exchanges = ["koinex", "zebpay", "unocoin", "coindelta", "coinsecure"]
+        self.supported_exchanges = ["koinex", "zebpay", "unocoin", "coindelta", "coinsecure", "wazirx"]
         parser = argparse.ArgumentParser(description="Command-line application to fetch latest cryptocurrency prices from Indian exchanges")
         parser.add_argument('-v', '--version', action='version', version="0.3.2")
         parser.add_argument('-e', '--exchange', dest='exchange', help='Name of the Exchange whose rates you want to checkout. Eg., Koinex, Zebpay, etc.')
@@ -44,6 +45,10 @@ class Ckandr(object):
         if ("UNOCOIN" in exchange.upper() or "ALL" in exchange.upper()):
             unocoin = Unocoin()
             unocoin.get_unocoin_table(self.args.crypto)
+        if ("WAZIRX" in exchange.upper() or "ALL" in exchange.upper()):
+            wazirx = Wazirx()
+            wazirx.get_wazirx_table(self.args.crypto)
+
 
     def list_exchanges(self):
         """List supported Cryptocurrency Exchanges"""
